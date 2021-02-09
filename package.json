@@ -1,0 +1,29 @@
+{
+  "name": "curly-chainsaw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ruihuancao/curly-chainsaw.git"
+  },
+  "keywords": [
+    "测试脚本"
+  ],
+  "author": "Sunert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruihuancao/curly-chainsaw/issues"
+  },
+  "homepage": "https://github.com/ruihuancao/curly-chainsaw/blob/main/README.md",
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "got": "^11.7.0",
+    "http-server": "^0.12.3",
+    "tough-cookie": "^4.0.0",
+    "download": "^8.0.0"
+  }
+}
