@@ -3,7 +3,7 @@ name: 中青Python版本
 on:
   workflow_dispatch:
   schedule:
-     - cron: '*/30 5-23 * * *'
+     - cron: '*/30 0-18 * * *'
   watch:
     types: started
 

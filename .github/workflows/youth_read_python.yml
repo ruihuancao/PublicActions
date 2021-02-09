@@ -3,7 +3,7 @@ name: 中青阅读自动读Python版本
 on:
   workflow_dispatch:
   schedule:
-     - cron: '0 7-20/4 * * *'
+     - cron: '0 0-15/4 * * *'
   watch:
     types: started
 
