@@ -672,6 +672,7 @@ def run():
     hour = beijing_datetime.hour
     for i in range(len(COOKIELIST)):
         account = COOKIELIST[i]
+        print(account)
         headers = account['YOUTH_HEADER']
         readBody = account['YOUTH_READBODY']
         redBody = account['YOUTH_REDBODY']
