@@ -15,14 +15,6 @@ from datetime import datetime, timezone, timedelta
 # YOUTH_HEADER 为对象, 其他参数为字符串，自动提现需要自己抓包
 # 选择微信提现30元，立即兑换，在请求包中找到withdraw2的请求，拷贝请求body类型 p=****** 的字符串，放入下面对应参数即可
 
-COOKIELIST = []  # 多账号准备
-
-if "YOUTH_COOKIES" in os.environ:
-    cookies = os.environ["YOUTH_COOKIES"]
-    print(cookies)
-    COOKIELIST = json.loads(cookies)
-
-print(COOKIELIST)
 
 cur_path = os.path.abspath(os.path.dirname(__file__))
 root_path = os.path.split(cur_path)[0]
@@ -665,6 +657,16 @@ def run():
     title = f'📚中青看点'
     content = ''
     result = ''
+    COOKIELIST = []
+    if "YOUTH_COOKIES" in os.environ:
+        cookies = os.environ["YOUTH_COOKIES"]
+        print("read config")
+        print(cookies)
+        COOKIELIST = json.loads(cookies)
+    print("current cookies start")
+    print(COOKIELIST)
+    print(type(COOKIELIST))
+    print("current cookies end")
     beijing_datetime = get_standard_time()
     print(f'\n【中青看点】{beijing_datetime.strftime("%Y-%m-%d %H:%M:%S")}')
     hour = beijing_datetime.hour
