@@ -15,38 +15,64 @@ from datetime import datetime, timezone, timedelta
 # YOUTH_HEADER 为对象, 其他参数为字符串，自动提现需要自己抓包
 # 选择微信提现30元，立即兑换，在请求包中找到withdraw2的请求，拷贝请求body类型 p=****** 的字符串，放入下面对应参数即可
 cookies1 = {
-    'YOUTH_HEADER': {},
-    'YOUTH_READBODY': '',
-    'YOUTH_REDBODY': '',
-    'YOUTH_READTIMEBODY': '',
+    'YOUTH_HEADER': {
+        "Accept": "*/*",
+        "X-Requested-With": "XMLHttpRequest",
+        "Connection": "keep-alive",
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+        "Host": "kd.youth.cn",
+        "Accept-Language": "zh-cn",
+        "Content-Type": "Accept-Encoding",
+        "Referer": "https://kd.youth.cn/h5/20190301taskcenter/ios/index.html?uuid=ab46e88671178fe4555e7ccc73a96cf8&sign=4aa2cc35a3431e039abbb57984ac2091&channel_code=80000000&uid=53066217&channel=80000000&access=WIfI&app_version=2.0.0&device_platform=iphone&cookie_id=e9b684fc6349523ddf5ee4bede36407a&openudid=ab46e88671178fe4555e7ccc73a96cf8&device_type=1&device_brand=iphone&sm_device_id=202012291619596aff9a650cb13c41a8a1d5079b3ea8a2010c76d9275ba375&device_id=49293647&version_code=200&os_version=14.3&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOw3XVrhaJ-3q_eqmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFonrfsKm2qoKvl2mEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOw3XVrhaJ-3q_eqmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFonrfsKm2qoKvl2mEY2Ft&cookie_id=e9b684fc6349523ddf5ee4bede36407a",
+        "Cookie": "sensorsdata2019jssdkcross=%7B%22distinct_id%22%3A%2253066217%22%2C%22%24device_id%22%3A%221778569f5db2a0-0f82e829dd7f1e8-754c1451-370944-1778569f5dceee%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24latest_referrer_host%22%3A%22%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%7D%2C%22first_id%22%3A%221778569f5db2a0-0f82e829dd7f1e8-754c1451-370944-1778569f5dceee%22%7D; Hm_lvt_268f0a31fc0d047e5253dd69ad3a4775=1612851052,1612851275; Hm_lvt_6c30047a5b80400b0fd3f410638b8f0c=1612851053; sajssdk_2019_cross_new_user=1"
+    },
+    'YOUTH_READBODY': 'p=9NwGV8Ov71o%3DgW5NEpb6rjb84bkaCQyOq-myT0C-Ktb_pYgxM135XoUfaIpfBqAxRGnFAl1k71C_zMPfUdFlHJTcuxYW9LgBCdTzuda7fnA8r2K-D8AqSYWzt-6LIEcC8SPkaeAgjjv1iCeYI_yckjGbVxJEy1xSQc4qp-_g8cJecymP34l6mTckY1lFLggiEWDV0Pl36lE9-o1Y1oiXpMyIsc_2RKYiiWsEnbGBFcJZD1cOG8xFl959zxJ9-hk-yEakaE4Wih8u3mTvcBhBKwJfiqRy4Gw-O0B3DN2eyh_pM0helbWDGAD4XuxTdNdq1nVkGjYR4uA_xsdJX76XR3quuTlERRKRrcjSxijVMRGaT_F1mBOG6xEpfQVkAuE5Iexx2Xp72K4kaKC90BtESzUmOVIhazt0k4F_DJx3NMoLPW9E2jHbi5paMAT3d6swFUcAsqlwEGjtXID_1D-q58ijpBVAgO5uDVrjSQ4cY3YdoPpMQsMk79HlM2veZ7p2Ocdx1-oj1IpeeFPOxfG-3udGyUqjsCCvG4BqdSAL1zJE4-dR6vSWrYjikzSzhMwZqT0A_uth9r9eDfCu2eQXzzBkucSWWEZauj_tKxA3X8wB_vbi1RlLQcrSXUY9tGWBj6AJm9pR7cL5qHBxsCVEYvm7ZwYyQBTN1ebCoDLPbgCf1j9OUpWtjyDUVcopDsulQn5mqGtRA4e8AKfF5qwqsFaFVPLPVzPC6TkEyxHlsdjZuwpwbo6KCN97naUUkqyqiAP1vSPnLHsRJuKe6XdzwkxazRjVUV4h44TN0gqTJopVULuSuuoDs-CFuSwTmS4_biOs46eUAftm77sXxHNadeaeDlz_dvMHwQ%3D%3D',
+    'YOUTH_REDBODY': "p=9NwGV8Ov71o%3DgW5NEpb6rjazbBlBp4-3VBqIE6FTR2KhfyLVi7Pl1_m0wwPJgXu-Fmh7S-5HqV6o1vMtEls8mPJh514T6M7mT424qvh8QrkxvplMO-SYOVD8eel3ty7vwxe_wa7ZfSZfXdjTiw3cbhIZT-OnIao6ZrF_hSdmQipG4Rvvz3nXQ6gK5CyHYI1D1-baeHBTpn7ijSSnjFXoXswynYfcRFREAHJ6YIfERMd5gNvOt1Z-2qhW6HeOfKfDXt51mbvvtHfKY4mqICm0RFyaEkPVSFOr36byvRw4XtAO6ApmJvbjdYTWmAslf9KwrCPfoepxHo0iaVfKmZTFTDdyuT3DtLuLy_aRfXYVPNJys9CuiuFyzJmLX7BJZFTKcCKYKlRAQBwO9RX3p-byFzGgvOZq5nzU9gJSlbgu_880HtwzanJxsIGdaNdq5PB8YOdt-g_5MvaMS6VadvfSIJ8QFet6GyjXt18r2qXql5QAhKnXQm5SE8w36f4hD82cqJtbo0u5EhKRR2SY4maOLgEv0_U26WRMaDiLy-g0qXKz_x0pfndT81WgLhFEvpoSmgpt021ytVB5tOyD3U7cN22BloWYzVwQPkJeKU7LuIEw-XlxIqA0YZie7E2Q4S8g04VrtP_UUeC0lUsDIHugnuUPP6LxCEMTQyRjSER-CKEjsR9Z-xcFAs82rcr0zBYrRDcnILIT3U2HKvLYOkC8qkCiaT_QWQOeGOeVvSAJsJ2IvUDmJJm_DWdqqCIZ3SCOeevvh-TEYBBHiA2F4M8qcYumz2b1LJVsMknjymTX96u9dwo1lWYN1rp-_r_0CCG3emRFS5epj8Y7UkShzfNB48Zu3K2E6sRE7Q%3D%3D",
+    'YOUTH_READTIMEBODY': "p=9NwGV8Ov71o%3DgW5NEpb6rjb84bkaCQyOq-myT0C-Ktb_pYgxM135XoUfaIpfBqAxRGnFAl1k71C_zMPfUdFlHJTcuxYW9LgBCdTzuda7fnA8r2K-D8AqSYWzt-6LIEcC8SPkaeAgjjv1iCeYI_yckjGbVxJEy1xSQc4qp-_g8cJecymP34l6mTckY1lFLggiEWDV0Pl36lE9-o1Y1oiXpMyIsc_2RKYiiWsEnbGBFcJZD1cOG8xFl959zxJ9-hk-yEakaE4Wih8u3mTvcBhBKwLGd7raA5l_2WAGCgVQhBk9bQlypoAFK6jzt88pRjQkQXJ1Iyf1uCR-0EBBulU0GmtfYFG8h0r9kEPW_g60U34a7pySPR813N3pFWSEhxJpzmEqBc2syBrudiPVzCySIWvrK16UpxfJIiWq2WTlAVodVlGSqJCLA61qQA3E1UErbF8WEE4lABbijLTnpUDBzSnS6oo76iMvQdv68PK65g38mVkSelu6AXrP55HRdR19P-hGG6f7mUKV-46Sq9CqYh7F9lZNwZdgm261Jqy4ZSlcYkNBYgqbciY7bAilWvyJauoMeY_WJo2yWHOyew1m6YWIeL_nApGBZUIxPZoYeQ5JjVPThz7sZFk9LfX7lwf9vNetJmutpPoqj26H53G3hCJRrD6gfxosjGl6XriGCRY8yON0q_IsgfCtSdW9kcsIGly-ks_YKhlNE9UjGoFKS96UskB8C0CsUlF__4rrmxhEZmpQ1EaPVld5myuVm1tDKdH29OzamKGMStxTeM2fNE4CXTxv_OTPHEXIUL03ASc5aBGAYuo5RSO0pL2coGVkhLFCXNvOIjfqzhLwNlSy_00%3D",
     'YOUTH_WITHDRAWBODY': ''
 }
-cookies2 = {}
+cookies2 = {
+    'YOUTH_HEADER': {
+        "Accept": "*/*",
+        "X-Requested-With": "XMLHttpRequest",
+        "Connection": "keep-alive",
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+        "Host": "kd.youth.cn",
+        "Accept-Language": "zh-cn",
+        "Content-Type": "Accept-Encoding",
+        "Cookie": "Hm_lpvt_6c30047a5b80400b0fd3f410638b8f0c=1612858063; Hm_lvt_6c30047a5b80400b0fd3f410638b8f0c=1612858063; Hm_lpvt_268f0a31fc0d047e5253dd69ad3a4775=1612858063; Hm_lvt_268f0a31fc0d047e5253dd69ad3a4775=1612858063; sajssdk_2019_cross_new_user=1; sensorsdata2019jssdkcross=%7B%22distinct_id%22%3A%2252522971%22%2C%22%24device_id%22%3A%2217785d4ef415e2-03f00efa27b5bd8-754c1451-370944-17785d4ef421139%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24latest_referrer_host%22%3A%22%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%7D%2C%22first_id%22%3A%2217785d4ef415e2-03f00efa27b5bd8-754c1451-370944-17785d4ef421139%22%7D",
+        "Referer": "https://kd.youth.cn/h5/20190301taskcenter/ios/index.html?uuid=ab46e88671178fe4555e7ccc73a96cf8&sign=0d37654ec5f3f268fd2efb9eb5da42e8&channel_code=80000000&uid=52522971&channel=80000000&access=WIfI&app_version=2.0.0&device_platform=iphone&cookie_id=be63b00c0858f16554caaff49a1a9180&openudid=ab46e88671178fe4555e7ccc73a96cf8&device_type=1&device_brand=iphone&sm_device_id=202012291619596aff9a650cb13c41a8a1d5079b3ea8a2010c76d9275ba375&device_id=49293647&version_code=200&os_version=14.3&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYmyhKKgma64qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFonrfsKm2ZoOJm2qEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYmyhKKgma64qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFonrfsKm2ZoOJm2qEY2Ft&cookie_id=be63b00c0858f16554caaff49a1a9180"
+    },
+    'YOUTH_READBODY': 'p=9NwGV8Ov71o%3DgW5NEpb6rjb84bkaCQyOq-myT0C-Ktb_kF97hamPuz4ZZk3rmRrVU_m2Z51XN3szZYaCPxNG07BYjyjwYkBVGTfTGYPVecze9u-jGHCQmfvey4yZrPyKR-cA01PbV3h61GBiHFc-skGrpoDK0eliCfJPX7f9_IVT-MEKcW_xpZDYqzKjXUHiQkSn-3pNKb-EYY2QNhdT3MWjveQRbvBByg87wRk9ezItIlsZoas242dX-emdrYOrxHGfLb7_Gpsdg3Af3nlqLBNr9-E78gZSpJEWwDoS9rEuyg3rMqgNQoibB3nwueBjqBXenBdhSgUpEhIp8WQodCKv8bhNN7Nx2nKK-N3YLgZhpuI8lOEfmNfyvORT7bc3RU1TT94XB79eXuLCg5SbvPHCmbjEiPPFpMBdt2EI6lcaaKFkWi4m8bY-s7aky3HAHojLIKfGhK_zVC4zEIkJjrxwWUphtUSqedzj2e3kcqqfVEJhrzFIPHFMZAAO92z9dZ8S1EARKaNQDYw1ZI5E69KGteMLQkiHv6OlxwBULW-mVsIOK_dLahVh7P0eOc5zi1fscyRVSVNdlFC54NaBDEiAQrIGoGIf2xYnE8_Q9FvMxGQc_OXtYpexo4WcxJsYSzCd86Mqbuopftvf2Z-O7Hy7tCW-2Zfu4V8YEXg-x1dXs1a9qdTl2wKxcncq5s7ohkBqKxfWx51MlHoWnZI6tVMzXwKvjVlvLcr5LX4TFWDc5sdeh3UIfyZLLMI3MOTvwbDkKHhwUSaV0mB5T--UNV2QAGj1bzU7Zi9D5_fuJiL5ZiqiqOKnxbhuvbHdvaAptS3MWs_OZBYI-QdVNKnQ9uiAPTIy6dlopQ%3D%3D',
+    'YOUTH_REDBODY': "p=9NwGV8Ov71o%3DgW5NEpb6rjazbBlBp4-3VBqIE6FTR2KhfyLVi7Pl1_m0wwPJgXu-Fmh7S-5HqV6o1vMtEls8mPJh514T6M7mT424qvh8QrkxvplMO-SYOVD8eel3ty7vwxe_wa7ZfSZfXdjTiw3cbhIZT-OnIao6ZrF_hSdmQipG4Rvvz3nXQ6gK5CyHYI1D1-baeHBTpn7ijSSnjFXoXswynYfcRFREAHJ6YIfERMd5gNvOt1Z-2qhW6HeOfKfDXt51mbvvtHfKY4mqICm0RFyaEkPVSFOr36byvRw4XtAO6ApmJvbjdYTWmAslf9KwrCPfoepxHo0iaVfKmZTFTDdyuT3DtLuLy_aRfXYVPNJys9CuiuFyzJmLX7BJZFTKcCKYKlRAQBwO9RX3p-byFzGgvOZq5nzU9gJSlbgu_880HtwzanJxsIGdaNdq5PB8YOdt-g_5MvaMS6VadvfSIJ8QFet6GyjXt18r2qXql5QAhKnXQm5SE8w36f4hD82cqJtbo0u5EhKRR2SY4maOLgEv0_U26WRMaDiLy-g0qXKz_x0pfndT81WgLhFEvpoSmgpt021ytVB5tOyD3U7cN22BloWYzVwQPkJeKU7LuIEw-XlxIqA0YZie7E2Q4S8g04VrtP_UUeC0lUsDIHugnuUPP6LxCEMTQyRjSER-CKEjsR9Z-xcFAs82rcr0zBYrRDcnILIT3U2HKvLYOkC8qkCiaT_QWQOeGOeVvSAJsJ2IvUDmJJm_DWdqqCIZ3SCOeevvh-TEYBBHiA2F4M8qcYumz2b1LJVsMknjymTX96u9dwo1lWYN1rp-_r_0CCG3emRFS5epj8Y7UkShzfNB48Zu3K2E6sRE7Q%3D%3D",
+    'YOUTH_READTIMEBODY': "p=9NwGV8Ov71o%3DgW5NEpb6rjb84bkaCQyOq-myT0C-Ktb_kF97hamPuz4ZZk3rmRrVU_m2Z51XN3szZYaCPxNG07BYjyjwYkBVGTfTGYPVecze9u-jGHCQmfvey4yZrPyKR-cA01PbV3h61GBiHFc-skGrpoDK0eliCfJPX7f9_IVT-MEKcW_xpZDYqzKjXUHiQkSn-3pNKb-EYY2QNhdT3MWjveQRbvBByg87wRk9ezItIlsZoas242dX-emdrYOrxHGfLb7_Gpsdg3Af3nlqLBM0UH6tbW_9NuzupICB93eMUBJUD_fJnl8koCiMCnn5CegEyfly64GnelNYutgpoFYEj5Z0QeP1YI3peAIG67RXzBrHtFQ-2sXzIt3ws2h0AfUIg-Vyw_Hih2a4vBUXUNhzRFcNkuU-hBaneqh_VHbluw5jMIxbqJDW6wJSztNqxBl16oDeLL_m4E4JYJTMetR_czVbvxnwncA5dYB2oNXYVRaY3s5BrauO7q2d4zFm-RkJV2a33EM--R6C9J-KTp_y_mpItgoujcbGSNXPk-R8hDB3ROqZxrmeeKpvhRoRWgv_O5u4SZeakNg9X9wHkVsLLd0uS8SerHclHVggUFpx9XTvRHqnB1rnEamPXDTy2Fw6Ik3wNjaO53uCw7U1gmk8UitH9sXtWV8v_rhVb54XLI2EhJS05Y3L7C8AXS4pSknuy_UK0XOYbgh_GJkzRx_VUUGWDLwYT8aEi6ic-6_sNS1c8l_YOkFu3psEIlGwBJTy3nWbKB3jzDgPpo1t1sptV9lqNqCvl9_sGnNGdqBiWlF8lEiNY0HBH0-zDyGSaeHZbikYDq5QXaaSf4YElVM%3D",
+    'YOUTH_WITHDRAWBODY': ''
+}
 
-COOKIELIST = [cookies1, ]  # 多账号准备
+COOKIELIST = [cookies1, cookies2]  # 多账号准备
 
-# ac读取环境变量
-if "YOUTH_HEADER1" in os.environ:
-    COOKIELIST = []
-    for i in range(5):
-        headerVar = f'YOUTH_HEADER{str(i+1)}'
-        readBodyVar = f'YOUTH_READBODY{str(i+1)}'
-        redBodyVar = f'YOUTH_REDBODY{str(i+1)}'
-        readTimeBodyVar = f'YOUTH_READTIMEBODY{str(i+1)}'
-        withdrawBodyVar = f'YOUTH_WITHDRAWBODY{str(i+1)}'
-        if headerVar in os.environ and os.environ[headerVar] and readBodyVar in os.environ and os.environ[readBodyVar] and redBodyVar in os.environ and os.environ[redBodyVar] and readTimeBodyVar in os.environ and os.environ[readTimeBodyVar]:
-            globals()['cookies'+str(i + 1)
-                      ]["YOUTH_HEADER"] = json.loads(os.environ[headerVar])
-            globals()['cookies'+str(i + 1)
-                      ]["YOUTH_READBODY"] = os.environ[readBodyVar]
-            globals()['cookies'+str(i + 1)
-                      ]["YOUTH_REDBODY"] = os.environ[redBodyVar]
-            globals()['cookies' + str(i + 1)
-                      ]["YOUTH_READTIMEBODY"] = os.environ[readTimeBodyVar]
-            globals()['cookies' + str(i + 1)
-                      ]["YOUTH_WITHDRAWBODY"] = os.environ[withdrawBodyVar]
-            COOKIELIST.append(globals()['cookies'+str(i + 1)])
-    print(COOKIELIST)
+# # ac读取环境变量
+# if "YOUTH_HEADER1" in os.environ:
+#     COOKIELIST = []
+#     for i in range(5):
+#         headerVar = f'YOUTH_HEADER{str(i+1)}'
+#         readBodyVar = f'YOUTH_READBODY{str(i+1)}'
+#         redBodyVar = f'YOUTH_REDBODY{str(i+1)}'
+#         readTimeBodyVar = f'YOUTH_READTIMEBODY{str(i+1)}'
+#         withdrawBodyVar = f'YOUTH_WITHDRAWBODY{str(i+1)}'
+#         if headerVar in os.environ and os.environ[headerVar] and readBodyVar in os.environ and os.environ[readBodyVar] and redBodyVar in os.environ and os.environ[redBodyVar] and readTimeBodyVar in os.environ and os.environ[readTimeBodyVar]:
+#             globals()['cookies'+str(i + 1)
+#                       ]["YOUTH_HEADER"] = json.loads(os.environ[headerVar])
+#             globals()['cookies'+str(i + 1)
+#                       ]["YOUTH_READBODY"] = os.environ[readBodyVar]
+#             globals()['cookies'+str(i + 1)
+#                       ]["YOUTH_REDBODY"] = os.environ[redBodyVar]
+#             globals()['cookies' + str(i + 1)
+#                       ]["YOUTH_READTIMEBODY"] = os.environ[readTimeBodyVar]
+#             globals()['cookies' + str(i + 1)
+#                       ]["YOUTH_WITHDRAWBODY"] = os.environ[withdrawBodyVar]
+#             COOKIELIST.append(globals()['cookies'+str(i + 1)])
+#     print(COOKIELIST)
 
 cur_path = os.path.abspath(os.path.dirname(__file__))
 root_path = os.path.split(cur_path)[0]
