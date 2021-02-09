@@ -31,6 +31,11 @@ jobs:
         YOUTH_REDBODY1: ${{ secrets.YOUTH_REDBODY1 }}
         YOUTH_READTIMEBODY1: ${{ secrets.YOUTH_READTIMEBODY1 }}
         YOUTH_WITHDRAWBODY1: ''
+        YOUTH_HEADER2: ${{ secrets.YOUTH_HEADER2 }}
+        YOUTH_READBODY2: ${{ secrets.YOUTH_READBODY2 }}
+        YOUTH_REDBODY2: ${{ secrets.YOUTH_REDBODY2 }}
+        YOUTH_READTIMEBODY2: ${{ secrets.YOUTH_READTIMEBODY2 }}
+        YOUTH_WITHDRAWBODY2: ''
         DD_BOT_ACCESS_TOKEN: ${{ secrets.DD_BOT_ACCESS_TOKEN }}
         DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
       run: |
