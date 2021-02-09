@@ -670,7 +670,8 @@ def run():
     beijing_datetime = get_standard_time()
     print(f'\n【中青看点】{beijing_datetime.strftime("%Y-%m-%d %H:%M:%S")}')
     hour = beijing_datetime.hour
-    for i, account in enumerate(COOKIELIST):
+    for i in range(len(COOKIELIST)):
+        account = COOKIELIST[i]
         headers = account['YOUTH_HEADER']
         readBody = account['YOUTH_READBODY']
         redBody = account['YOUTH_REDBODY']
