@@ -660,19 +660,12 @@ def run():
     COOKIELIST = []
     if "YOUTH_COOKIES" in os.environ:
         cookies = os.environ["YOUTH_COOKIES"]
-        print("read config")
-        print(cookies)
         COOKIELIST = json.loads(cookies)
-    print("current cookies start")
-    print(COOKIELIST)
-    print(type(COOKIELIST))
-    print("current cookies end")
     beijing_datetime = get_standard_time()
     print(f'\n【中青看点】{beijing_datetime.strftime("%Y-%m-%d %H:%M:%S")}')
     hour = beijing_datetime.hour
     for i in range(len(COOKIELIST)):
         account = COOKIELIST[i]
-        print(account)
         headers = account['YOUTH_HEADER']
         readBody = account['YOUTH_READBODY']
         redBody = account['YOUTH_REDBODY']
