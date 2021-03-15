@@ -31,6 +31,7 @@ jobs:
     - name: Run
       env:
         XMLY_SPEED_COOKIE: ${{ secrets.XMLY_SPEED_COOKIE }}
+        AUTO_TAKE_OUT: ${{secrets.AUTO_TAKE_OUT}}
         DD_BOT_ACCESS_TOKEN: ${{ secrets.DD_BOT_ACCESS_TOKEN }}
         DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
       run: |
