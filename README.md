@@ -1,2 +1,1 @@
 # PublicActions
-public action
